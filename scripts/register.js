@@ -20,7 +20,7 @@ $registerForm.addEventListener('submit', async (e) => {
   const { data, errors } = result;
 
   if (data) {
-    window.location.href = '/login.html';
+    window.location.href = '/excercice-test/account/login.html';
   } else if (errors) {
     alert(`Error: ${errors[0].message}`);
   }

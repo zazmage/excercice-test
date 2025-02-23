@@ -1,4 +1,3 @@
-
 import { createPost } from "./api.js";
 import { getCurrentUser } from "./auth.js";
 

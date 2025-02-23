@@ -5,7 +5,7 @@ export function createBlogCard(id, title, imagePath, body) {
   $card.className = 'blog-card';
   $card.style.cursor = 'pointer';
   $card.addEventListener('click', () => {
-    window.location.href = 'post/post.html?id=' + id;
+    window.location.href = '/excercice-test/post/post.html?id=' + id;
   });
 
   const $titleElement = d.createElement('h3');
@@ -43,13 +43,13 @@ export function createAdminCard(id, title, imageUrl, body) {
   $buttonContainer.className = 'button-container';
 
   const $editLink = d.createElement('a');
-  $editLink.href = 'post/edit.html?id=' + id;
+  $editLink.href = '/excercice-test/post/edit.html?id=' + id;
 
   const $editButton = d.createElement('button');
   $editButton.className = 'edit-btn';
 
   const $editIcon = d.createElement('img');
-  $editIcon.src = '../images/edit.svg';
+  $editIcon.src = 'images/edit.svg';
   $editIcon.alt = 'Edit';
   $editIcon.className = 'button-icon';
 
@@ -61,7 +61,7 @@ export function createAdminCard(id, title, imageUrl, body) {
   $deleteButton.dataset.id = id;
 
   const $deleteIcon = d.createElement('img');
-  $deleteIcon.src = '../images/delete.svg';
+  $deleteIcon.src = 'images/delete.svg';
   $deleteIcon.alt = 'Delete';
   $deleteIcon.className = 'button-icon';
 

@@ -34,12 +34,12 @@ export async function loginUser(userData) {
 export function logoutUser() {
   if (confirm('Are you sure you want to logout?')) {
     localStorage.removeItem('currentUser');
-    window.location.href = 'account/login.html';
+    window.location.href = '/excercice-test/account/login.html';
   }
 }
 
 export const checkLoggedUser = () => {
   if (getCurrentUser()) {
-    window.location.href = 'post/admin.html';
+    window.location.href = '/excercice-test/post/admin.html';
   }
 }

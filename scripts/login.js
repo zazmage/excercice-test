@@ -21,7 +21,7 @@ $loginForm.addEventListener('submit', async (e) => {
       name: data.name,
       avatar: data.avatar,
     }));
-    window.location.href = '/post/admin.html';
+    window.location.href = '/excercice-test/post/admin.html';
   } else if (errors) {
     alert(`Error: ${errors[0].message}`);
   }
