@@ -1,4 +1,5 @@
 import { getPost, updatePost } from './api.js';
+import { getCurrentUser } from './auth.js';
 
 const d = document;
 const urlParams = new URLSearchParams(window.location.search);

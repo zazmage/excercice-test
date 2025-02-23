@@ -1,3 +1,5 @@
+import { deletePost } from "./api";
+
 const d = document;
 
 export function createBlogCard(id, title, imagePath, body) {
@@ -69,7 +71,7 @@ export function createAdminCard(id, title, imageUrl, body) {
 
   $deleteButton.addEventListener('click', async () => {
     if (!confirm('Are you sure you want to delete this post?')) return;
-    const success = await deleteBlogPost(id);
+    const success = await deletePost(id);
     if (success) {
       $card.remove();
       alert('Post deleted successfully');
