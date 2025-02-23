@@ -9,7 +9,7 @@ const currentAdmin = getCurrentUser();
 const adminName = currentAdmin?.name;
 
 if (!adminName) {
-  window.location.href = '/adminlogin.html';
+  window.location.href = '/excercice-test/account/login.html';
 }
 
 if ($createPostForm) {

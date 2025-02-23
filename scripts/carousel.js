@@ -1,30 +1,31 @@
 import { getPosts } from './api.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const imgEl = document.getElementById('carousel-img');
-  const captionEl = document.getElementById('carousel-caption');
-  const leftBtn = document.getElementById('left-btn');
-  const rightBtn = document.getElementById('right-btn');
+const d = document;
+
+d.addEventListener('DOMContentLoaded', () => {
+  const $imgEl = d.getElementById('carousel-img');
+  const $captionEl = d.getElementById('carousel-caption');
+  const $leftBtn = d.getElementById('left-btn');
+  const $rightBtn = d.getElementById('right-btn');
   let currentIdx = 0, posts = [];
 
   const updateCarousel = () => {
     if (!posts.length) return;
     const post = posts[currentIdx];
-    imgEl.src = post.media.url;
-    imgEl.alt = post.title;
-    captionEl.textContent = post.title;
-    // Attach click event to navigate to the post detail
-    imgEl.onclick = () => {
+    $imgEl.src = post.media.url;
+    $imgEl.alt = post.title;
+    $captionEl.textContent = post.title;
+    $imgEl.onclick = () => {
       window.location.href = `post/post.html?id=${post.id}`;
     };
   };
 
-  leftBtn.addEventListener('click', () => {
+  $leftBtn.addEventListener('click', () => {
     currentIdx = (currentIdx - 1 + posts.length) % posts.length;
     updateCarousel();
   });
 
-  rightBtn.addEventListener('click', () => {
+  $rightBtn.addEventListener('click', () => {
     currentIdx = (currentIdx + 1) % posts.length;
     updateCarousel();
   });

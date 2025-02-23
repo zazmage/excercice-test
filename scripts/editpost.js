@@ -9,16 +9,23 @@ const $titleInput = d.getElementById('title');
 const $bodyInput = d.getElementById('body');
 const $imageInput = d.getElementById('image');
 
+const currentAdmin = getCurrentUser();
+const adminName = currentAdmin?.name;
+
+if (!adminName) {
+  window.location.href = '/excercice-test/account/login.html';
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   if (!postId) {
-    window.location.href = '/';
+    window.location.href = '/excercice-test/post/admin.html';
     return;
   }
 
   const post = await getPost(postId);
 
   if (!post) {
-    window.location.href = '/';
+    window.location.href = '/excercice-test/post/admin.html';
     return;
   }
 
@@ -42,7 +49,7 @@ $form.addEventListener('submit', async (e) => {
 
     const result = await updatePost(postId, updatedPost);
     if (result) {
-      window.location.href = '/admin-posts.html';
+      window.location.href = '/excercice-test/post/admin.html';
     } else {
       throw new Error('Failed to update post');
     }
