@@ -5,7 +5,7 @@ export function createBlogCard(id, title, imagePath, body) {
   $card.className = 'blog-card';
   $card.style.cursor = 'pointer';
   $card.addEventListener('click', () => {
-    window.location.href = '/post/post.html?id=' + id;
+    window.location.href = 'post/post.html?id=' + id;
   });
 
   const $titleElement = d.createElement('h3');
@@ -43,7 +43,7 @@ export function createAdminCard(id, title, imageUrl, body) {
   $buttonContainer.className = 'button-container';
 
   const $editLink = d.createElement('a');
-  $editLink.href = '/post/edit.html?id=' + id;
+  $editLink.href = 'post/edit.html?id=' + id;
 
   const $editButton = d.createElement('button');
   $editButton.className = 'edit-btn';
