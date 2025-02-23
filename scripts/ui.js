@@ -1,4 +1,4 @@
-import { deletePost } from "./api";
+import { deletePost } from "./api.js";
 
 const d = document;
 
